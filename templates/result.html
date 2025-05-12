@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Question Answering Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="page-shell">
+        <section class="panel">
+            <div class="section-heading">
+                <h2>Visual Question Answering Result</h2>
+            </div>
+
+            <div class="result-card">
+                <h3>Your Answer</h3>
+                <p>{{ answer }}</p>
+            </div>
+
+            <canvas id="confidenceChart" width="400" height="400"></canvas>
+        </section>
+    </div>
+
+    <script>
+        var answerData = {{ answer }};
+        var confidenceData = {{ confidence }};
+
+        var ctx = document.getElementById('confidenceChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: answerData,
+                datasets: [{
+                    label: 'Confidence',
+                    data: confidenceData,
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.5)',
+                        'rgba(54, 162, 235, 0.5)',
+                        'rgba(255, 206, 86, 0.5)',
+                        'rgba(75, 192, 192, 0.5)',
+                        'rgba(153, 102, 255, 0.5)',
+                        'rgba(255, 159, 64, 0.5)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom'
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+

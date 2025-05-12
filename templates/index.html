@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Insight AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="page-shell">
+        <section class="hero-screen">
+            <div class="brand-pill">Visual Insight AI</div>
+            <h1>Ask anything about an image</h1>
+            <p class="hero-copy">Upload an image and ask a question to get an instant visual answer.</p>
+
+            <form action="/" method="post" enctype="multipart/form-data" class="vqa-form">
+                <label for="image">Choose Image</label>
+                <input type="file" id="image" name="image" required>
+
+                <label for="question">Question</label>
+                <input type="text" id="question" name="question" placeholder="What is happening in this image?" required>
+
+                <button type="submit">Analyze Image</button>
+            </form>
+        </section>
+
+        {% if answer %}
+        <section class="result-panel">
+            <div class="result-grid">
+                <div class="result-card">
+                    <h3>Uploaded Image</h3>
+                    {% if image_data %}
+                        <img id="uploaded-image" src="{{ image_data }}" alt="Uploaded Image">
+                    {% endif %}
+                </div>
+
+                <div class="result-card">
+                    <h3>Question</h3>
+                    <p class="result-question">{{ question }}</p>
+
+                    <div id="answer" class="answer-box">
+                        <h3>Answer</h3>
+                        <p>{{ answer }}</p>
+                    </div>
+
+                    {% if pie_chart %}
+                        <div class="confidence-wrap">
+                            <h3>Confidence</h3>
+                            <img src="{{ pie_chart }}" alt="Confidence Levels">
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </section>
+        {% endif %}
+    </div>
+</body>
+</html>

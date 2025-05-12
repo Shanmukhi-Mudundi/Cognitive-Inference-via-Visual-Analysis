@@ -1,0 +1,160 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(135deg, #0f172a, #1d4ed8 55%, #7c3aed);
+    color: #ffffff;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.page-shell {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 48px 20px;
+}
+
+.hero-screen {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    backdrop-filter: blur(14px);
+    border-radius: 26px;
+    padding: 34px;
+    box-shadow: 0 18px 48px rgba(0, 0, 0, 0.25);
+}
+
+.brand-pill {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.16);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 999px;
+    padding: 6px 12px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+}
+
+.hero-screen h1 {
+    margin: 0 0 12px;
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    line-height: 1.08;
+}
+
+.hero-copy {
+    margin: 0 0 24px;
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.84);
+}
+
+.vqa-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.vqa-form label {
+    font-weight: 700;
+}
+
+.vqa-form input[type="text"],
+.vqa-form input[type="file"] {
+    width: 100%;
+    padding: 13px 14px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    background: rgba(255, 255, 255, 0.9);
+    color: #111827;
+}
+
+.vqa-form button {
+    margin-top: 10px;
+    padding: 14px 18px;
+    border: none;
+    border-radius: 14px;
+    background: #ffffff;
+    color: #1d4ed8;
+    font-weight: 800;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.vqa-form button:hover {
+    transform: translateY(-1px);
+}
+
+.result-panel {
+    margin-top: 24px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    backdrop-filter: blur(14px);
+    border-radius: 26px;
+    padding: 24px;
+}
+
+.result-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.result-card {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    padding: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.result-card h3 {
+    margin-top: 0;
+}
+
+#uploaded-image {
+    width: 100%;
+    max-height: 420px;
+    object-fit: cover;
+    border-radius: 14px;
+}
+
+.result-question {
+    font-weight: 700;
+    color: #e0e7ff;
+}
+
+.answer-box {
+    margin-top: 16px;
+    padding: 14px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 14px;
+}
+
+.confidence-wrap img {
+    width: 100%;
+    border-radius: 14px;
+    background: #fff;
+}
+
+@media (max-width: 700px) {
+    .page-shell {
+        padding: 20px 12px;
+    }
+
+    .hero-screen,
+    .result-panel {
+        padding: 20px;
+        border-radius: 20px;
+    }
+
+    .result-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
