@@ -1,7 +1,7 @@
 # Cognitive Inference via Visual Analysis
 
 [![Python](https://img.shields.io/badge/Python-3.9%2B-blue)]()
-[![Transformers](https://img.shields.io/badge/HuggingFace-yellow)]()
+[![Transformers](https://img.shields.io/badge/Transformers-HuggingFace-yellow)]()
 [![Status](https://img.shields.io/badge/Status-Development-orange)]()
 
 A Visual Question Answering (VQA) web application that lets a user upload an image, ask a natural-language question about it, and receive an AI-generated answer along with a confidence breakdown across the top predicted answers.
